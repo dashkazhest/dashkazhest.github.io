@@ -10,6 +10,9 @@ width: 100;
     flex-direction: column;
     min-height: 100vh;
     padding-top: 147px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 .page-header{
     position: fixed;
@@ -17,22 +20,236 @@ width: 100;
     left: 0;
     width: 100%;
     height: 147px;
-   
+    background-color: rgb(222,222,222,0.5);
+    backdrop-filter: blur(20px);
+    z-index: 100;
 }
 .page-header_container{
     box-sizing: border-box;
     display: flex;
     align-items: center;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
     max-width: 1414px;
     width: 100%; 
 }
+
+.page-header_logo{
+    flex-shrink: 0;
+    width: 202px;
+    height: 147px;
+    font-size: 0;
+    text-decoration: none;
+}
+.page-header_logo-icon{
+    height:100%;
+    width: 100%;
+}
+
+.page-header_nav{
+    display: flex;
+    align-items: baseline;
+    margin: 0 auto; /*верх низ 0, по краям выравнивается*/
+    gap: 50px;
+}
+.page-header_nav-link{
+
+    text-decoration: none; /*Обнуляем браузерные стили*/
+    color: rgba(31, 30, 30, 1);
+    font-size: 18px;
+    line-height: 1.3; /*примерно то же самое, что и 25п*/
+    transition: color 0.2s; /*плавное изменения состояня элемента*/
+    font-weight: 600;
+}
+
+.page-header_nav-link:hover,
+.page-header_nav-link:active{  /*1-эффект наведения, 2-клик*/
+    color: rgba(188, 51, 36, 1);
+}
+.btn { /*Для всех кнопок ?*/
+    display:inline-flex;
+    box-sizing: border-box;
+    padding: 15px 40px;
+    background-color: transparent;
+    text-decoration: none;
+    border: 1px solid rgba(31, 30, 30, 1);
+    border-radius: 0;
+    outline: none;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.3;
+    color:rgba(31, 30, 30, 1);
+    align-items: center;
+    transition: background-color 0.2s, color 0.2s;
+}
+.page-header_right-block{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 202px;
+}
+.btn:hover,
+.btn:active{
+    background-color: rgba(31, 30, 30, 1);
+    color:#FFFFFF;
+}
+
+
+.listing{
+   flex-direction: column; 
+}
+
+.listing_events-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+.events_listing{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    max-width: 1414px;
+    width: 100%; 
+}
+
+.section-title{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 624px;
+    min-height: 62px;
+    margin: 0 auto 150px;
+    padding: 8px 45px;
+    background-color: #1F1E1E;
+    font-family: "Lora", serif;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.3;
+    color: #FFFFFF;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.events{
+    padding: 140px 0 100px;
+}
+
+.event-card{
+    display:flex;
+    max-width: 100%;
+    min-width: 280px;
+    width: 405px;
+}
+
+.event-card_link{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color:rgba(31, 30, 30, 1);
+    width: 100%;  
+}
+
+.event-card_link:hover .event-card_title{
+    color:rgba(188, 51, 36, 1);
+    text-decoration-color:rgba(188, 51, 36, 1);
+}
+
+.event-card_picture{
+    display: block;
+    width:100%;
+    margin: 0 0 25px;
+    position: relative;
+    font-size: 0;
+    overflow: hidden;
+    text-decoration: none;
+}
+.event-card_picture::after{
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top:107.16%; /*height/width * 100 */
+}
+.event-card_img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*растянуть изображение по области*/
+}
+
+.event-card_title{
+    margin: 0 0 15px;
+    font-weight: 700;
+    min-height: 64px;
+    font-size: 24px;
+    color: rgba(31, 30, 30, 1);
+    text-decoration: underline transparent;
+    line-height: 1.3;
+    transition: color 0.2s, text-decoration-color 0.2s;
+}
+
+.event-card_text{
+    font-size: 16px;
+    line-height: 1.3;
+    margin: 0 0 auto;
+}
+
+.event-card_time{
+    margin: 15px 0 0;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.3;
+}
+
+.listing_event-card{
+    width: calc(33.333% - 40px);
+}
+
+.event{
+    padding: 40px 0 150px;
+}
+
+.reserve{
+    display: grid;
+    grid-template-columns: 405px 1fr;
+    grid-template-areas: 
+    "checkbox scheme"
+    "order legend" ;
+    gap: 65px 11%;
+    width: 100%;
+}
+
+.reserve_checkbox{
+    grid-area: "checkbox";
+    background-color: darkslateblue;
+}
+
+.reserve_scheme{
+    grid-area: "scheme";
+    background-color: rgb(227, 63, 192);
+}
+
+.reserve_order{
+    grid-area: "order";
+    background-color: rgb(181, 178, 206);
+}
+
+.reserve_legend{
+    grid-area: "legend";
+    background-color: rgb(61, 139, 77);
+}
+
 .main{
-    flex: 1 0 auto;
-    background-color: rgb(222,222,222,0.5);
-    backdrop-filter: blur(20px);
-    
+    flex: 1 0 auto;   
 }
 .page-footer{
     flex: 0 0 auto;
-
 }
