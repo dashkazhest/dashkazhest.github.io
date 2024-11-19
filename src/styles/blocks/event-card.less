@@ -1,0 +1,69 @@
+.event-card{
+    display:flex;
+    max-width: 100%;
+    min-width: 280px;
+    width: 405px;
+
+    &_link{
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color:rgba(31, 30, 30, 1);
+        width: 100%;  
+
+        &:hover .event-card_title{
+            color:rgba(188, 51, 36, 1);
+            text-decoration-color:rgba(188, 51, 36, 1);
+        }
+    }
+
+    &_picture{
+        display: block;
+        width:100%;
+        margin: 0 0 25px;
+        position: relative;
+        font-size: 0;
+        overflow: hidden;
+        text-decoration: none;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 100%;
+            padding-top:107.16%; /*height/width * 100 */
+        }
+    }
+
+    &_img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /*растянуть изображение по области*/
+    }
+
+    &_title{
+        margin: 0 0 15px;
+        font-weight: 700;
+        min-height: 64px;
+        font-size: 24px;
+        color: rgba(31, 30, 30, 1);
+        text-decoration: underline transparent;
+        line-height: 1.3;
+        transition: color 0.2s, text-decoration-color 0.2s;
+    }
+
+    &_text{
+        font-size: 16px;
+        line-height: 1.3;
+        margin: 0 0 auto;
+    }
+
+    &_time{
+        margin: 15px 0 0;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.3;
+    }
+}
