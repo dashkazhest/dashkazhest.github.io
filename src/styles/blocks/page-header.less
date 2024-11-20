@@ -4,19 +4,15 @@
     left: 0;
     width: 100%;
     height: 147px;
-    background-color: rgb(222,222,222,0.5);
+    background-color: @gray_pager;
     backdrop-filter: blur(20px);
     z-index: 100;
 
     &_container{
-        box-sizing: border-box;
+        .container();
+        
         display: flex;
         align-items: center;
-        margin: 0 auto;
-        padding-left: 40px;
-        padding-right: 40px;
-        max-width: 1414px;
-        width: 100%; 
     }
 
     &_logo{
@@ -42,14 +38,14 @@
    &_nav-link{
 
         text-decoration: none; /*Обнуляем браузерные стили*/
-        color: rgba(31, 30, 30, 1);
+        color: @black;
         font-size: 18px;
         line-height: 1.3; /*примерно то же самое, что и 25п*/
         transition: color 0.2s; /*плавное изменения состояня элемента*/
         font-weight: 600;
         
         &:hover,:active{
-            color: rgba(188, 51, 36, 1);
+            color: @red;
         }
     }
 

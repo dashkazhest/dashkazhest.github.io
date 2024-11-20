@@ -11,9 +11,18 @@ width: 100;
     flex-direction: column;
     min-height: 100vh;
     padding-top: 147px;
-    font-family: "Open Sans", sans-serif;
+    font-family: @font1;
     font-weight: 400;
     font-style: normal;
+    background-color: @gray;
+    background-image: url(../assets/images/noise.png), url(../assets/images/bg.jpeg);
+    background-position: 0 0, 0 0;
+    background-size: auto, 100% auto;
+    background-repeat: repeat, repeat-y;
+    color: @black;
+    font-size: 16px;
+    line-height: 1.375;
+    overflow-x: hidden;
 }
 
 .main{
@@ -24,7 +33,7 @@ width: 100;
 }
 
 a {
-    color: #1F1E1E;
+    color: @black;
     outline: none;
   }
   
@@ -33,3 +42,38 @@ a {
     height: auto;
     object-fit: cover;
   }
+
+input,
+textarea,
+select {
+  box-shadow: none;
+  outline: none;
+  color: @black;
+  font-family: @font1;
+}
+
+textarea {
+  resize: none;
+}
+
+input,
+textarea {
+    &::placeholder{
+        color:@light_gray;
+    }
+
+}
+
+input:focus,
+textarea:focus {
+    &::placeholder{
+        color: transparent;
+    }
+}
+
+body {
+  padding: 10px;
+  background-color: #dedede;
+  font-family: @font1;
+}
+
