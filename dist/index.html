@@ -45,17 +45,109 @@
   </footer>
   <div class="pp">
     <div class="pp_wrapper">
-      <div class="pp__sticky-close"></div>
-      <form class="form">
-        <label class="field form__field">
-          <span class="field__label">Имя*</span>
-          <input class="field__input" type="text" placeholder="Имя" name="name" required>
-        </label>
-        <label class="field form__field">
-          <span class="field__title">Есть пожелания? Напишите нам:</span>
-          <textarea class="field__textarea" name="Пожелания"></textarea>
-        </label>
-      </form>
+      <div class="pp_sticky-close">
+        <button class="pp_x-btn x-btn">
+          <svg class="x-btn_icon" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.40864 5.99915L11.7045 1.71268C11.8926 1.52453 11.9983 1.26935 11.9983 1.00326C11.9983 0.737183 11.8926 0.481998 11.7045 0.29385C11.5164 0.105701 11.2612 0 10.9952 0C10.7291 0 10.474 0.105701 10.2859 0.29385L6 4.59031L1.71414 0.29385C1.52602 0.105701 1.27087 -1.98247e-09 1.00483 0C0.738783 1.98247e-09 0.483635 0.105701 0.295513 0.29385C0.107391 0.481998 0.00170495 0.737183 0.00170495 1.00326C0.00170495 1.26935 0.107391 1.52453 0.295513 1.71268L4.59136 5.99915L0.295513 10.2856C0.201875 10.3785 0.127553 10.489 0.0768329 10.6108C0.0261132 10.7325 0 10.8631 0 10.995C0 11.1269 0.0261132 11.2575 0.0768329 11.3793C0.127553 11.501 0.201875 11.6116 0.295513 11.7044C0.388386 11.7981 0.49888 11.8724 0.620622 11.9232C0.742363 11.9739 0.872943 12 1.00483 12C1.13671 12 1.26729 11.9739 1.38903 11.9232C1.51077 11.8724 1.62127 11.7981 1.71414 11.7044L6 7.40799L10.2859 11.7044C10.3787 11.7981 10.4892 11.8724 10.611 11.9232C10.7327 11.9739 10.8633 12 10.9952 12C11.1271 12 11.2576 11.9739 11.3794 11.9232C11.5011 11.8724 11.6116 11.7981 11.7045 11.7044C11.7981 11.6116 11.8724 11.501 11.9232 11.3793C11.9739 11.2575 12 11.1269 12 10.995C12 10.8631 11.9739 10.7325 11.9232 10.6108C11.8724 10.489 11.7981 10.3785 11.7045 10.2856L7.40864 5.99915Z" fill="white" />
+          </svg>
+        </button>
+      </div>
+      <div class="pp_container">
+        <h2 class="pp_title">Заполните форму
+          <br \> и мы подберем площадку
+        </h2>
+        <form class="pp_form form">
+
+          <div class="form_list">
+            <div class="form_field form_field--w50 field">
+              <h6 class="form_title">Формат мероприятия:</h6>
+              <div class="radio">
+                <label class="radio_item">
+                  <input class="radio_input" name="format" value="seminar" type="radio" checked>
+                  <span class="radio_mark"></span>
+                  <span class="radio_label">Мастер-класс/семинар</span>
+                </label>
+                <label class="radio_item">
+                  <input class="radio_input" name="format" value="concert" type="radio" checked>
+                  <span class="radio_mark"></span>
+                  <span class="radio_label">Концерт/выступление</span>
+                </label>
+                <label class="radio_item">
+                  <input class="radio_input" name="format" value="pokaz" type="radio" checked>
+                  <span class="radio_mark"></span>
+                  <span class="radio_label">Выставка/показ</span>
+                </label>
+                <label class="radio_item">
+                  <input class="radio_input" name="format" value="dif" type="radio" checked>
+                  <span class="radio_mark"></span>
+                  <span class="radio_label">Другое</span>
+                </label>
+
+              </div>
+            </div>
+            <div class="form_group form_group--w50">
+              <label class="form_field form_field--mb30 field">
+                <h6 class="form_title">Планируемое количество посетителей:</h6>
+                <select name="amount" class="field_select">
+                  <option value="20">до 20 человек</option>
+                  <option value="100">от 20 до 100 человек</option>
+                  <option value="500">от 100 до 500 человек</option>
+                  <option value="1000">более 500 человек</option>
+                </select>
+              </label>
+
+              <div class="form_field field">
+                <h6 class="form_title"> Дата проведения:</h6>
+                <div class="field_data">
+                  <div class="field_date-inputs">
+                    <input type="text" class="field_date-input" placeholder="ДД" readonly>
+                    <input type="text" class="field_date-input" placeholder="ММ" readonly>
+                    <input type="text" class="field_date-input field_date-input--w100" placeholder="ГГГГ" readonly>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="form_section">
+            <h6 class="form_title"> Контактные данные:</h6>
+            <div class="form_list">
+              <label class="form_field form_field--w50 field">
+                <span class="field_label">Имя*</span>
+                <input class="field_input" type="text" placeholder="Имя" name="name" required>
+              </label>
+              <label class="form_field form_field--w50 field">
+                <span class="field_label">Фамилия*</span>
+                <input class="field_input" type="text" placeholder="Фамилия" name="lastname" required>
+              </label>
+              <label class="form_field form_field--w50 field">
+                <span class="field_label">Телефон*</span>
+                <input class="field_input" type="text" placeholder="+7 (___) ___ __ __" name="number" required>
+              </label>
+              <label class="form_field form_field--w50 field">
+                <span class="field_label">Email*</span>
+                <input class="field_input" type="text" placeholder="Email" name="email" required>
+              </label>
+            </div>
+          </div>
+
+          <label class="form_field form_field--mb30 field">
+            <span class="form_title">Есть пожелания? Напишите нам:</span>
+            <textarea class="field_textarea" name="Пожелания"></textarea>
+          </label>
+
+          <label class="check">
+            <input type="checkbox" name="agree" class="check_input" required checked>
+            <span class="check_mark"></span>
+            <span class="check_label check_label--s">Я соглашаюсь с пользовательским соглашением и
+              с политикой использования персональных данных </span>
+          </label>
+          <div class="form_btns">
+            <button type="submit" class="form_btn btn">Отправить</button>
+            <button type="button" class="form_btn-close">Закрыть</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </body>
